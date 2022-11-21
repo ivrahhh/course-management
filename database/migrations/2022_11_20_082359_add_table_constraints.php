@@ -25,6 +25,7 @@ return new class extends Migration
 
         Schema::table('enrollments', function(Blueprint $table) {
             $table->foreignId('student_id')
+                ->nullable()
                 ->constrained('students')
                 ->cascadeOnDelete();
 

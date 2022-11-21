@@ -30,7 +30,13 @@ Route::middleware('guest')->group(function() {
 });
 
 Route::middleware('auth')->group(function() {
-    Route::view('email/verify', 'pages.auth.email-verify')->name('verification.notice');
+    Route::get('email/verify', function() {
+        if(request()->user()->hasVerifiedEmail()) {
+            return redirect('/');
+        }
+        return view('pages.auth.email-verify');
+    })->name('verification.notice');
+    
     Route::get('email/verify/{id}/{hash}', VerifyEmailController::class)
         ->middleware('signed')
         ->name('verification.verify');

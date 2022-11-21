@@ -20,7 +20,7 @@ class ResetPasswordController extends Controller
     {
         return view('pages.auth.reset-password', [
             'email' => $request->email,
-            'password' => $request->token,
+            'token' => $request->token,
         ]);
     }
 
@@ -47,7 +47,7 @@ class ResetPasswordController extends Controller
             });
 
         if($status === Password::PASSWORD_RESET) {
-            return to_route('login')->with(['status' => __($status)]);
+            return redirect()->route('login')->with(['status' => __($status)]);
         }
 
         return back()->withErrors([

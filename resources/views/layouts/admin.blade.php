@@ -11,9 +11,9 @@
     ])
     <title>{{ config('app.name') }}</title>
 </head>
-<body>
+<body class="antialiased">
     <header>
-        <nav class="flex items-center px-4 py-2 bg-slate-900 text-gray-100">
+        <nav class="flex items-center px-4 py-2 bg-slate-900 text-gray-100 shadow z-40">
             <a class="fa-brands fa-laravel text-gray-400 text-4xl"></a>
             <div class="ml-auto">
                 <x-dropdown>
@@ -35,8 +35,18 @@
         </nav>
     </header>
     <div class="flex relative">
-        <aside class="sticky top-0 h-screen shadow w-64">
-            
+        <aside class="sticky top-0 h-screen shadow w-64 bg-slate-900 border-t border-gray-700">
+            <div class="flex flex-col py-4">
+                <a href="" class="flex items-center gap-2 text-sm px-4 py-3 hover:bg-slate-800 text-white">
+                    <i class="fa-solid fa-gauge"></i> Dashboard
+                </a>
+                <a href="" class="flex items-center gap-2 text-sm px-4 py-3 hover:bg-slate-800 text-white">
+                    <i class="fa-solid fa-users"></i> Students
+                </a>
+                <a href="" class="flex items-center gap-2 text-sm px-4 py-3 hover:bg-slate-800 text-white">
+                    <i class="fa-solid fa-file"></i> Enrollment
+                </a>
+            </div>
         </aside>
         <main class="flex flex-col">
             @yield('content')

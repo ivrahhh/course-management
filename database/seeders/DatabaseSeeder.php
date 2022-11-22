@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Harvincent Capino',
             'email' => 'harvicapino22@gmail.com',
         ]);
+
+        $this->call(DepartmentSeeder::class);
     }
 }

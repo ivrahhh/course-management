@@ -14,7 +14,7 @@ class CourseController extends Controller
     public function index() : View
     {
         return view('pages.course-list', [
-            'courses' => Course::with('department')->get(),
+            'courses' => Course::with('department')->paginate(10),
         ]);
     }
 

@@ -12,9 +12,9 @@ class DepartmentController extends Controller
 {
     public function index() : View
     {
-        $department = Department::all();
+        $departments = Department::query()->paginate(10);
 
-        return view('pages.department-list', compact('department'));
+        return view('pages.department-list', compact('departments'));
     }
 
     public function create() : View

@@ -40,6 +40,12 @@
                 <a href="" class="flex items-center gap-2 text-sm px-4 py-3 hover:bg-slate-800 text-white">
                     <i class="fa-solid fa-gauge"></i> Dashboard
                 </a>
+                <a href="{{ route('courses.index') }}" class="flex items-center gap-2 text-sm px-4 py-3 hover:bg-slate-800 text-white">
+                    <i class="fa-solid fa-layer-group"></i>Courses
+                </a>
+                <a href="{{ route('departments.index') }}" class="flex items-center gap-2 text-sm px-4 py-3 hover:bg-slate-800 text-white">
+                    <i class="fa-solid fa-layer-group"></i> Departments
+                </a>
                 <a href="" class="flex items-center gap-2 text-sm px-4 py-3 hover:bg-slate-800 text-white">
                     <i class="fa-solid fa-users"></i> Students
                 </a>
@@ -48,7 +54,7 @@
                 </a>
             </div>
         </aside>
-        <main class="flex flex-col">
+        <main class="flex flex-col p-4 shrink-0 flex-1">
             @yield('content')
         </main>
     </div>
